@@ -18,6 +18,8 @@
 		3D117425297EDA5C003BC7F7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117424297EDA5C003BC7F7 /* Section.swift */; };
 		3D117427297EDBC4003BC7F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117426297EDBC4003BC7F7 /* Item.swift */; };
 		3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117428297EDC73003BC7F7 /* ModelProvider.swift */; };
+		3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117433297EEA64003BC7F7 /* HomeViewController.swift */; };
+		3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117435297EEA77003BC7F7 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3D117424297EDA5C003BC7F7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3D117426297EDBC4003BC7F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3D117428297EDC73003BC7F7 /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
+		3D117433297EEA64003BC7F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3D117435297EEA77003BC7F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
+				3D11742F297EEA4D003BC7F7 /* Pages */,
 				3D117423297EDA48003BC7F7 /* Model */,
 				3D117418297ED327003BC7F7 /* View */,
 				3D117415297ED236003BC7F7 /* Controllers */,
@@ -128,6 +133,23 @@
 				3D117426297EDBC4003BC7F7 /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3D11742F297EEA4D003BC7F7 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3D117432297EEA5D003BC7F7 /* Home */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		3D117432297EEA5D003BC7F7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D117433297EEA64003BC7F7 /* HomeViewController.swift */,
+				3D117435297EEA77003BC7F7 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +227,8 @@
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
 				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
+				3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */,
+				3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */,
 				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
 				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,
 				3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */,
