@@ -8,5 +8,5 @@
 import UIKit
 
 class View: UIView {
-    
+    private let collectionView: CollectionView = .init(collectionViewLayout: CollectionViewLayout())
 }
