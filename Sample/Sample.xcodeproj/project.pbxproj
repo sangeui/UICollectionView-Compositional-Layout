@@ -15,6 +15,9 @@
 		3D11741A297ED330003BC7F7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117419297ED330003BC7F7 /* View.swift */; };
 		3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11741B297ED817003BC7F7 /* CollectionView.swift */; };
 		3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */; };
+		3D117425297EDA5C003BC7F7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117424297EDA5C003BC7F7 /* Section.swift */; };
+		3D117427297EDBC4003BC7F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117426297EDBC4003BC7F7 /* Item.swift */; };
+		3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117428297EDC73003BC7F7 /* ModelProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		3D117419297ED330003BC7F7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		3D11741B297ED817003BC7F7 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
+		3D117424297EDA5C003BC7F7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		3D117426297EDBC4003BC7F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		3D117428297EDC73003BC7F7 /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
+				3D117423297EDA48003BC7F7 /* Model */,
 				3D117418297ED327003BC7F7 /* View */,
 				3D117415297ED236003BC7F7 /* Controllers */,
 			);
@@ -111,6 +118,16 @@
 				3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */,
 			);
 			path = "CollectionView Layout";
+			sourceTree = "<group>";
+		};
+		3D117423297EDA48003BC7F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D117428297EDC73003BC7F7 /* ModelProvider.swift */,
+				3D117424297EDA5C003BC7F7 /* Section.swift */,
+				3D117426297EDBC4003BC7F7 /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +203,9 @@
 				3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */,
 				3D11741A297ED330003BC7F7 /* View.swift in Sources */,
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
+				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
+				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
+				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
 				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,
 				3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */,
 				3D117403297ED036003BC7F7 /* SceneDelegate.swift in Sources */,
