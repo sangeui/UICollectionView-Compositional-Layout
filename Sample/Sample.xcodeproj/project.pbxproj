@@ -25,6 +25,8 @@
 		3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */; };
 		3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117442297FC435003BC7F7 /* GridLayoutView.swift */; };
 		3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridLayout.swift */; };
+		3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */; };
+		3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewController.swift; sourceTree = "<group>"; };
 		3D117442297FC435003BC7F7 /* GridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
 		3D117449297FC549003BC7F7 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutDataSource.swift; sourceTree = "<group>"; };
+		3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridLayoutCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,7 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
-				3D117448297FC4EB003BC7F7 /* CollectionView Layout */,
+				3D11744E297FD248003BC7F7 /* CollectionView */,
 				3D11742F297EEA4D003BC7F7 /* Pages */,
 				3D117423297EDA48003BC7F7 /* Model */,
 				3D117418297ED327003BC7F7 /* View */,
@@ -123,7 +127,6 @@
 			children = (
 				3D117420297ED88B003BC7F7 /* CollectionView Layout */,
 				3D117419297ED330003BC7F7 /* View.swift */,
-				3D11741B297ED817003BC7F7 /* CollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +234,33 @@
 			path = "CollectionView Layout";
 			sourceTree = "<group>";
 		};
+		3D11744B297FD19E003BC7F7 /* CollectionView DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */,
+			);
+			path = "CollectionView DataSource";
+			sourceTree = "<group>";
+		};
+		3D11744E297FD248003BC7F7 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3D11744F297FD255003BC7F7 /* View */,
+				3D117448297FC4EB003BC7F7 /* CollectionView Layout */,
+				3D11744B297FD19E003BC7F7 /* CollectionView DataSource */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		3D11744F297FD255003BC7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D11741B297ED817003BC7F7 /* CollectionView.swift */,
+				3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,8 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */,
+				3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */,
 				3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */,
 				3D11741A297ED330003BC7F7 /* View.swift in Sources */,
+				3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */,
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
 				3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */,
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,

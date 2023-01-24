@@ -10,7 +10,11 @@ import UIKit
 
 class GridLayoutView: UIView {
     private let sliderView: UISliderView = .init()
-    private let collectionView: UICollectionView = CollectionView(collectionViewLayout: GridLayout())
+    private lazy var collectionView: UICollectionView = CollectionView(collectionViewLayout: self.gridLayout)
+    private lazy var dataSource: GridLayoutDataSource = .init(collectionView: self.collectionView)
+    private lazy var gridLayout: GridLayout = .init(columnsProvider: { [weak self] in
+        return self?.sliderView.valueChanged.value ?? 1
+    })
     
     private var cancellables: Set<AnyCancellable> = .init()
     
@@ -23,6 +27,17 @@ class GridLayoutView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    func update(sections: [(Section, [Item])]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        
+        sections.forEach { (section, item) in
+            snapshot.appendSections([section])
+            snapshot.appendItems(item, toSection: section)
+        }
+        
+        self.dataSource.apply(snapshot)
+    }
 }
 
 private extension GridLayoutView {
@@ -34,7 +49,7 @@ private extension GridLayoutView {
         publisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] value in
-                
+                self?.collectionView.collectionViewLayout.invalidateLayout()
             })
             .store(in: &self.cancellables)
     }
@@ -44,6 +59,7 @@ private extension GridLayoutView {
     func setup() {
         self.backgroundColor = .systemGroupedBackground
         self.setupSliderView(view: self.sliderView)
+        self.setupCollectionView(view: self.collectionView)
     }
     
     func setupSliderView(view: UISliderView) {
@@ -67,6 +83,12 @@ private extension GridLayoutView {
         view.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
         view.topAnchor.constraint(equalTo: self.sliderView.bottomAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        view.backgroundColor = .clear
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        view.register(CollectionViewGridLayoutCell.self,
+                      forCellWithReuseIdentifier: CollectionViewGridLayoutCell.identifier)
     }
 }
 
