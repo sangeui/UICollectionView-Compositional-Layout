@@ -20,6 +20,8 @@
 		3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117428297EDC73003BC7F7 /* ModelProvider.swift */; };
 		3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117433297EEA64003BC7F7 /* HomeViewController.swift */; };
 		3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117435297EEA77003BC7F7 /* HomeView.swift */; };
+		3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117438297EEEE3003BC7F7 /* UILabelView.swift */; };
+		3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11743C297FBEBA003BC7F7 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		3D117428297EDC73003BC7F7 /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
 		3D117433297EEA64003BC7F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3D117435297EEA77003BC7F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3D117438297EEEE3003BC7F7 /* UILabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelView.swift; sourceTree = "<group>"; };
+		3D11743C297FBEBA003BC7F7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +150,36 @@
 		3D117432297EEA5D003BC7F7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3D117433297EEA64003BC7F7 /* HomeViewController.swift */,
-				3D117435297EEA77003BC7F7 /* HomeView.swift */,
+				3D11743B297FBD54003BC7F7 /* Model */,
+				3D11743A297FBD47003BC7F7 /* Controller */,
+				3D117437297EEEDC003BC7F7 /* View */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3D117437297EEEDC003BC7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D117435297EEA77003BC7F7 /* HomeView.swift */,
+				3D117438297EEEE3003BC7F7 /* UILabelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D11743A297FBD47003BC7F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D117433297EEA64003BC7F7 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D11743B297FBD54003BC7F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D11743C297FBEBA003BC7F7 /* Category.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +261,9 @@
 				3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */,
 				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
 				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,
+				3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */,
 				3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */,
+				3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */,
 				3D117403297ED036003BC7F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
