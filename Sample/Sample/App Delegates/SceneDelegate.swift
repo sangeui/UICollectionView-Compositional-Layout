@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = .init(windowScene: windowScene)
-        self.window?.rootViewController = self.createHomeViewController()
+        self.window?.rootViewController = GridLayoutViewController()
         self.window?.makeKeyAndVisible()
     }
 }
