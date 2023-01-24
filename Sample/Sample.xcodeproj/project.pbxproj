@@ -207,7 +207,6 @@
 		3D117444297FC440003BC7F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3D117442297FC435003BC7F7 /* GridLayoutView.swift */,
 				3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */,
 			);
 			path = Controller;
@@ -216,6 +215,7 @@
 		3D117445297FC447003BC7F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D117442297FC435003BC7F7 /* GridLayoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
