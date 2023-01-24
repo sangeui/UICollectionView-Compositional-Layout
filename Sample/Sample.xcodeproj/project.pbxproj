@@ -24,6 +24,7 @@
 		3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11743C297FBEBA003BC7F7 /* Category.swift */; };
 		3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */; };
 		3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117442297FC435003BC7F7 /* GridLayoutView.swift */; };
+		3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3D11743C297FBEBA003BC7F7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewController.swift; sourceTree = "<group>"; };
 		3D117442297FC435003BC7F7 /* GridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
+		3D117449297FC549003BC7F7 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
+				3D117448297FC4EB003BC7F7 /* CollectionView Layout */,
 				3D11742F297EEA4D003BC7F7 /* Pages */,
 				3D117423297EDA48003BC7F7 /* Model */,
 				3D117418297ED327003BC7F7 /* View */,
@@ -220,6 +223,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3D117448297FC4EB003BC7F7 /* CollectionView Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3D117449297FC549003BC7F7 /* GridLayout.swift */,
+			);
+			path = "CollectionView Layout";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +305,7 @@
 				3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */,
 				3D11741A297ED330003BC7F7 /* View.swift in Sources */,
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
+				3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */,
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
 				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
 				3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */,

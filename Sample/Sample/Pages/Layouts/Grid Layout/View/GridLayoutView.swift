@@ -8,5 +8,5 @@
 import UIKit
 
 class GridLayoutView: UIView {
-    
+    private let collectionView: UICollectionView = CollectionView(collectionViewLayout: GridLayout())
 }
