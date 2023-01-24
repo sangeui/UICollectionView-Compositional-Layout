@@ -5,9 +5,12 @@
 //  Created by William on 2023/01/24.
 //
 
+import Combine
 import UIKit
 
 class HomeView: UIView {
+    var userDidSelectRowAtCategory: PassthroughSubject<Category, Never> = .init()
+    
     private let labelView: UILabelView = .init()
     private let tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
     
@@ -20,6 +23,16 @@ class HomeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+}
+
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < categories.count else {
+            return
+        }
+        
+        self.userDidSelectRowAtCategory.send(self.categories[indexPath.row])
     }
 }
 
@@ -57,11 +70,12 @@ private extension HomeView {
         
         tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: self.labelView.bottomAnchor, constant: 25).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 25).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.labelView.bottomAnchor, constant: .zero).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: .zero).isActive = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func setupLabelView(view: UILabelView) {
