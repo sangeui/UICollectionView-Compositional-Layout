@@ -9,7 +9,7 @@ import UIKit
 
 class GridLayout: UICollectionViewCompositionalLayout {
     init() {
-        super.init(section: .init(group: .init(layoutSize: .init(widthDimension: .absolute(1), heightDimension: .absolute(1)))))
+        super.init(section: .init(group: .horizontal(layoutSize: .init(widthDimension: .absolute(1), heightDimension: .absolute(1)), subitems: [.init(layoutSize: .init(widthDimension: .absolute(1), heightDimension: .absolute(1)))])))
     }
     
     required init?(coder: NSCoder) {
