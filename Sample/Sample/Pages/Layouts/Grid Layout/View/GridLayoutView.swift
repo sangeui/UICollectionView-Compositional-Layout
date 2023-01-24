@@ -81,10 +81,12 @@ private extension GridLayoutView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: self.sliderView.bottomAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.sliderView.bottomAnchor, constant: 10).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         view.backgroundColor = .clear
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.register(CollectionViewGridLayoutCell.self,

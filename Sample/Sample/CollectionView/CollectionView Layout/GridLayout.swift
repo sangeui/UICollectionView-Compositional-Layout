@@ -35,7 +35,6 @@ private extension NSCollectionLayoutSection {
 // MARK: - Group
 private extension NSCollectionLayoutGroup {
     static func group(columns: Int) -> NSCollectionLayoutGroup {
-        print(#line)
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                           heightDimension: .fractionalWidth(1.0 / CGFloat(columns)))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: size,
