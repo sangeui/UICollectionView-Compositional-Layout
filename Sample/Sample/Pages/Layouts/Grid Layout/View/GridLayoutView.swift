@@ -59,6 +59,15 @@ private extension GridLayoutView {
         view.slider.minimumValueImage = .init(systemName: "squareshape.split.2x2")
         view.slider.maximumValueImage = .init(systemName: "squareshape.split.3x3")
     }
+    
+    func setupCollectionView(view: UICollectionView) {
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.sliderView.bottomAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
 }
 
 class UISliderView: UIView {
