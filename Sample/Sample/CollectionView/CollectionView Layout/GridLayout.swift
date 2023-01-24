@@ -7,10 +7,16 @@
 
 import UIKit
 
+struct GridLayoutConfigurationValue {
+    let numberOfColumns: CGFloat
+    let interGroupSpacing: CGFloat
+    let interItemSpacing: CGFloat
+}
+
 class GridLayout: UICollectionViewCompositionalLayout {
-    init(columnsProvider: @escaping (() -> Int)) {
+    init(columnsProvider: @escaping (() -> GridLayoutConfigurationValue)) {
         super.init(sectionProvider: { _,_ in
-            return .section(columns: columnsProvider())
+            return .section(value: columnsProvider())
         })
     }
     
@@ -25,8 +31,9 @@ class GridLayout: UICollectionViewCompositionalLayout {
 
 // MARK: - Section
 private extension NSCollectionLayoutSection {
-    static func section(columns: Int) -> NSCollectionLayoutSection {
-        let section = NSCollectionLayoutSection(group: .group(columns: columns))
+    static func section(value: GridLayoutConfigurationValue) -> NSCollectionLayoutSection {
+        let section = NSCollectionLayoutSection(group: .group(value: value))
+        section.interGroupSpacing = value.interGroupSpacing
         
         return section
     }
@@ -34,12 +41,13 @@ private extension NSCollectionLayoutSection {
 
 // MARK: - Group
 private extension NSCollectionLayoutGroup {
-    static func group(columns: Int) -> NSCollectionLayoutGroup {
+    static func group(value: GridLayoutConfigurationValue) -> NSCollectionLayoutGroup {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                          heightDimension: .fractionalWidth(1.0 / CGFloat(columns)))
+                                          heightDimension: .fractionalWidth(1.0 / value.numberOfColumns))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: size,
-                                                       repeatingSubitem: .item(columns: columns),
-                                                       count: columns)
+                                                       repeatingSubitem: .item(value: value),
+                                                       count: Int(value.numberOfColumns))
+        group.interItemSpacing = .fixed(value.interItemSpacing)
         
         return group
     }
@@ -47,8 +55,8 @@ private extension NSCollectionLayoutGroup {
 
 // MARK: - Item
 private extension NSCollectionLayoutItem {
-    static func item(columns: Int) -> NSCollectionLayoutItem {
-        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / CGFloat(columns)),
+    static func item(value: GridLayoutConfigurationValue) -> NSCollectionLayoutItem {
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / value.numberOfColumns),
                                           heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: size)
         
