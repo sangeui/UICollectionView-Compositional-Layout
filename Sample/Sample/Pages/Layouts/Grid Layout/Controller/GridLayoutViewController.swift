@@ -12,6 +12,16 @@ class GridLayoutViewController: UIViewController {
         self.view = GridLayoutView()
     }
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.title = "GRID LAYOUT"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
