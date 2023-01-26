@@ -27,6 +27,13 @@ class GridLayout: UICollectionViewCompositionalLayout {
     func update() {
         self.invalidateLayout()
     }
+    
+    func update(interSectionSpacing: CGFloat) {
+        let configuration = self.configuration
+        configuration.interSectionSpacing = interSectionSpacing
+        
+        self.configuration = configuration
+    }
 }
 
 // MARK: - Section

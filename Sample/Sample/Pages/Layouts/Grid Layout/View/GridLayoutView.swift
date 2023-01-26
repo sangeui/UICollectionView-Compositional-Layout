@@ -14,6 +14,7 @@ class GridLayoutView: UIView {
     private let sliderView: UISliderView = .init()
     private let interGroupSliderView: UISliderView = .init()
     private let interItemSliderView: UISliderView = .init()
+    private let interSectionSliderView: UISliderView = .init()
     
     private lazy var collectionView: UICollectionView = CollectionView(collectionViewLayout: self.gridLayout)
     private lazy var dataSource: GridLayoutDataSource = .init(collectionView: self.collectionView)
@@ -52,6 +53,7 @@ private extension GridLayoutView {
         self.observeSliderValueChanged(publisher: self.sliderView.valueChanged.eraseToAnyPublisher())
         self.observeSliderValueChanged(publisher: self.interGroupSliderView.valueChanged.eraseToAnyPublisher())
         self.observeSliderValueChanged(publisher: self.interItemSliderView.valueChanged.eraseToAnyPublisher())
+        self.observeInterSectionSpacingChanged(publisher: self.interSectionSliderView.valueChanged.eraseToAnyPublisher())
     }
     
     func observeSliderValueChanged(publisher: AnyPublisher<Int, Never>) {
@@ -62,6 +64,15 @@ private extension GridLayoutView {
             })
             .store(in: &self.cancellables)
     }
+    
+    func observeInterSectionSpacingChanged(publisher: AnyPublisher<Int, Never>) {
+        publisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] value in
+                (self?.collectionView.collectionViewLayout as? GridLayout)?.update(interSectionSpacing: .init(value))
+            })
+            .store(in: &self.cancellables)
+    }
 }
 
 private extension GridLayoutView {
@@ -69,6 +80,7 @@ private extension GridLayoutView {
         self.backgroundColor = .systemGroupedBackground
         self.setupStackView(view: self.stackView)
         self.setupSliderView(view: self.sliderView)
+        self.setupInterSectionSpacingSliderView(view: self.interSectionSliderView)
         self.setupInterGroupSpacingSliderView(view: self.interGroupSliderView)
         self.setupInterItemSpacingSliderView(view: self.interItemSliderView)
         self.setupCollectionView(view: self.collectionView)
@@ -111,6 +123,16 @@ private extension GridLayoutView {
         view.slider.maximumValue = 10
         view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
         view.primaryText = "INTER ITEM SPACING"
+    }
+    
+    func setupInterSectionSpacingSliderView(view: UISliderView) {
+        self.stackView.addArrangedSubview(view)
+        
+        view.slider.value = .zero
+        view.slider.minimumValue = .zero
+        view.slider.maximumValue = 10
+        view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
+        view.primaryText = "INTER SECTION SPACING"
     }
     
     func setupCollectionView(view: UICollectionView) {
