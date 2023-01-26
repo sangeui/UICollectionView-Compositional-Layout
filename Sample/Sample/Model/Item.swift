@@ -12,7 +12,7 @@ struct Item {
     private let identifier: UUID
     
     // 기타 프로퍼티
-    private let color: Color
+    let color: Color
     
     init(color: Color) {
         self.identifier = .init()
@@ -41,5 +41,13 @@ extension Item: Equatable {
 extension Item: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.identifier)
+    }
+}
+
+extension Item {
+    static var random: Item {
+        return .init(color: (CGFloat.random(in: 0...255),
+                             CGFloat.random(in: 0...255),
+                             CGFloat.random(in: 0...255)) )
     }
 }

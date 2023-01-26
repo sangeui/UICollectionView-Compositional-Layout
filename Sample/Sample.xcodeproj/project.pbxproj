@@ -22,6 +22,12 @@
 		3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117435297EEA77003BC7F7 /* HomeView.swift */; };
 		3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117438297EEEE3003BC7F7 /* UILabelView.swift */; };
 		3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11743C297FBEBA003BC7F7 /* Category.swift */; };
+		3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */; };
+		3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117442297FC435003BC7F7 /* GridLayoutView.swift */; };
+		3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridLayout.swift */; };
+		3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */; };
+		3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */; };
+		3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11746B2982B4AC003BC7F7 /* UISliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		3D117435297EEA77003BC7F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3D117438297EEEE3003BC7F7 /* UILabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelView.swift; sourceTree = "<group>"; };
 		3D11743C297FBEBA003BC7F7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewController.swift; sourceTree = "<group>"; };
+		3D117442297FC435003BC7F7 /* GridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
+		3D117449297FC549003BC7F7 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutDataSource.swift; sourceTree = "<group>"; };
+		3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridLayoutCell.swift; sourceTree = "<group>"; };
+		3D11746B2982B4AC003BC7F7 /* UISliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,7 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
+				3D11744E297FD248003BC7F7 /* CollectionView */,
 				3D11742F297EEA4D003BC7F7 /* Pages */,
 				3D117423297EDA48003BC7F7 /* Model */,
 				3D117418297ED327003BC7F7 /* View */,
@@ -116,7 +129,7 @@
 			children = (
 				3D117420297ED88B003BC7F7 /* CollectionView Layout */,
 				3D117419297ED330003BC7F7 /* View.swift */,
-				3D11741B297ED817003BC7F7 /* CollectionView.swift */,
+				3D11746B2982B4AC003BC7F7 /* UISliderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				3D117432297EEA5D003BC7F7 /* Home */,
+				3D11743F297FC353003BC7F7 /* Layouts */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -180,6 +194,74 @@
 				3D11743C297FBEBA003BC7F7 /* Category.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3D11743E297FC350003BC7F7 /* Grid Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3D117445297FC447003BC7F7 /* View */,
+				3D117444297FC440003BC7F7 /* Controller */,
+			);
+			path = "Grid Layout";
+			sourceTree = "<group>";
+		};
+		3D11743F297FC353003BC7F7 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				3D11743E297FC350003BC7F7 /* Grid Layout */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		3D117444297FC440003BC7F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D117445297FC447003BC7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D117442297FC435003BC7F7 /* GridLayoutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D117448297FC4EB003BC7F7 /* CollectionView Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3D117449297FC549003BC7F7 /* GridLayout.swift */,
+			);
+			path = "CollectionView Layout";
+			sourceTree = "<group>";
+		};
+		3D11744B297FD19E003BC7F7 /* CollectionView DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */,
+			);
+			path = "CollectionView DataSource";
+			sourceTree = "<group>";
+		};
+		3D11744E297FD248003BC7F7 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3D11744F297FD255003BC7F7 /* View */,
+				3D117448297FC4EB003BC7F7 /* CollectionView Layout */,
+				3D11744B297FD19E003BC7F7 /* CollectionView DataSource */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		3D11744F297FD255003BC7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D11741B297ED817003BC7F7 /* CollectionView.swift */,
+				3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,16 +334,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */,
+				3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */,
 				3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */,
 				3D11741A297ED330003BC7F7 /* View.swift in Sources */,
+				3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */,
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
+				3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */,
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
 				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
 				3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */,
+				3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */,
 				3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */,
 				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
 				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,
 				3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */,
+				3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */,
 				3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */,
 				3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */,
 				3D117403297ED036003BC7F7 /* SceneDelegate.swift in Sources */,
