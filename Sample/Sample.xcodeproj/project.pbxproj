@@ -27,6 +27,7 @@
 		3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridLayout.swift */; };
 		3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */; };
 		3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */; };
+		3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11746B2982B4AC003BC7F7 /* UISliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3D117449297FC549003BC7F7 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutDataSource.swift; sourceTree = "<group>"; };
 		3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridLayoutCell.swift; sourceTree = "<group>"; };
+		3D11746B2982B4AC003BC7F7 /* UISliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				3D117420297ED88B003BC7F7 /* CollectionView Layout */,
 				3D117419297ED330003BC7F7 /* View.swift */,
+				3D11746B2982B4AC003BC7F7 /* UISliderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
 				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
 				3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */,
+				3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */,
 				3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */,
 				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
 				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,

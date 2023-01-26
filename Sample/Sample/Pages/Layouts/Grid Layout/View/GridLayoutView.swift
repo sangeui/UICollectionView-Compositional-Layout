@@ -11,10 +11,10 @@ import UIKit
 class GridLayoutView: UIView {
     private let stackView: UIStackView = .init()
     
-    private let sliderView: UISliderView = .init()
-    private let interGroupSliderView: UISliderView = .init()
-    private let interItemSliderView: UISliderView = .init()
-    private let interSectionSliderView: UISliderView = .init()
+    private let sliderView: UISliderView = .init(configuration: .init(minimum: 1, maximum: 10, default: 1))
+    private let interGroupSliderView: UISliderView = .init(configuration: .init(minimum: .zero, maximum: 10, default: .zero))
+    private let interItemSliderView: UISliderView = .init(configuration: .init(minimum: .zero, maximum: 10, default: .zero))
+    private let interSectionSliderView: UISliderView = .init(configuration: .init(minimum: .zero, maximum: 10, default: .zero))
     
     private lazy var collectionView: UICollectionView = CollectionView(collectionViewLayout: self.gridLayout)
     private lazy var dataSource: GridLayoutDataSource = .init(collectionView: self.collectionView)
@@ -108,9 +108,6 @@ private extension GridLayoutView {
     func setupInterGroupSpacingSliderView(view: UISliderView) {
         self.stackView.addArrangedSubview(view)
         
-        view.slider.value = .zero
-        view.slider.minimumValue = .zero
-        view.slider.maximumValue = 10
         view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
         view.primaryText = "INTER GROUP SPACING"
     }
@@ -118,9 +115,6 @@ private extension GridLayoutView {
     func setupInterItemSpacingSliderView(view: UISliderView) {
         self.stackView.addArrangedSubview(view)
         
-        view.slider.value = .zero
-        view.slider.minimumValue = .zero
-        view.slider.maximumValue = 10
         view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
         view.primaryText = "INTER ITEM SPACING"
     }
@@ -128,9 +122,6 @@ private extension GridLayoutView {
     func setupInterSectionSpacingSliderView(view: UISliderView) {
         self.stackView.addArrangedSubview(view)
         
-        view.slider.value = .zero
-        view.slider.minimumValue = .zero
-        view.slider.maximumValue = 10
         view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
         view.primaryText = "INTER SECTION SPACING"
     }
@@ -150,87 +141,5 @@ private extension GridLayoutView {
         view.showsHorizontalScrollIndicator = false
         view.register(CollectionViewGridLayoutCell.self,
                       forCellWithReuseIdentifier: CollectionViewGridLayoutCell.identifier)
-    }
-}
-
-class UISliderView: UIView {
-    var valueChanged: CurrentValueSubject<Int, Never> = .init(1)
-    
-    var primaryText: String {
-        get { return self.primaryTextLabel.text ?? .init() }
-        set { self.primaryTextLabel.text = newValue }
-    }
-    
-    var secondaryText: String {
-        get { return self.secondaryTextLabel.text ?? .init() }
-        set { self.secondaryTextLabel.text = newValue }
-    }
-    
-    let slider: UISlider = .init()
-    
-    private let primaryTextLabel: UILabel = .init()
-    private let secondaryTextLabel: UILabel = .init()
-    
-    init() {
-        super.init(frame: .zero)
-        self.setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-}
-
-private extension UISliderView {
-    @objc func action(sender: UISlider) {
-        self.valueChanged.send(Int(sender.value))
-        self.secondaryTextLabel.text = "\(Int(sender.value))"
-    }
-}
-
-private extension UISliderView {
-    func setup() {
-        self.setupPrimaryTextLabel(label: self.primaryTextLabel)
-        self.setupSecondaryTextLabel(label: self.secondaryTextLabel)
-        self.setupSlider(slider: self.slider)
-    }
-    
-    func setupPrimaryTextLabel(label: UILabel) {
-        self.addSubview(label)
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        
-        label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 11, weight: .semibold)
-    }
-    
-    func setupSecondaryTextLabel(label: UILabel) {
-        self.addSubview(label)
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.leadingAnchor.constraint(equalTo: self.primaryTextLabel.trailingAnchor, constant: 20).isActive = true
-        label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        label.centerYAnchor.constraint(equalTo: self.primaryTextLabel.centerYAnchor).isActive = true
-        
-        label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 11, weight: .light)
-        label.setContentCompressionResistancePriority(.required, for: .horizontal)
-        label.setContentHuggingPriority(.required, for: .horizontal)
-    }
-    
-    func setupSlider(slider: UISlider) {
-        self.addSubview(slider)
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        slider.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        slider.topAnchor.constraint(equalTo: self.primaryTextLabel.bottomAnchor, constant: 10).isActive = true
-        slider.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
-        
-        slider.value = 1
-        slider.minimumValue = 1
-        slider.maximumValue = 10
-        slider.addTarget(self, action: #selector(self.action(sender:)), for: .valueChanged)
     }
 }
