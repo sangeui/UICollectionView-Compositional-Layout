@@ -8,8 +8,9 @@
 import Combine
 import UIKit
 
-class UISliderView: UIView {
-    let valueChanged: CurrentValueSubject<Int, Never>
+class UISliderView<T: RawRepresentable>: UIView {
+    let valueChanged: Subject
+    let type: T
     
     var primaryText: String {
         get { return self.primaryTextLabel.text ?? .init() }
@@ -28,9 +29,10 @@ class UISliderView: UIView {
     
     private let configuration: ValueConfiguration
     
-    init(configuration: ValueConfiguration) {
+    init(configuration: ValueConfiguration, type: T) {
         self.configuration = configuration
-        self.valueChanged = .init(Int(configuration.default))
+        self.type = type
+        self.valueChanged = .init((Int(configuration.default), self.type))
         
         super.init(frame: .zero)
         self.setup()
@@ -39,20 +41,21 @@ class UISliderView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    @objc func action(sender: UISlider) {
+        self.valueChanged.send((Int(sender.value), self.type))
+        self.secondaryTextLabel.text = "\(Int(sender.value))"
+    }
 }
 
 extension UISliderView {
+    typealias Publisher = AnyPublisher<(Int, T), Never>
+    typealias Subject = CurrentValueSubject<(Int, T), Never>
+    
     struct ValueConfiguration {
         let minimum: Float
         let maximum: Float
         let `default`: Float
-    }
-}
-
-private extension UISliderView {
-    @objc func action(sender: UISlider) {
-        self.valueChanged.send(Int(sender.value))
-        self.secondaryTextLabel.text = "\(Int(sender.value))"
     }
 }
 
@@ -101,5 +104,34 @@ private extension UISliderView {
         slider.minimumValue = self.configuration.minimum
         slider.maximumValue = self.configuration.maximum
         slider.addTarget(self, action: #selector(self.action(sender:)), for: .valueChanged)
+    }
+}
+
+extension UISliderView {
+    static func create(type: UISliderViewType) -> UISliderView<UISliderViewType> {
+        let view: UISliderView<UISliderViewType>
+        
+        switch type {
+        case .numberOfColumns:
+            view = UISliderView<UISliderViewType>(configuration: .init(minimum: 1, maximum: 10, default: 1),
+                                                                    type: type)
+            view.primaryText = "NUMBER OF COLUMNS"
+        case .interSectionSpacing:
+            view = UISliderView<UISliderViewType>(configuration: .init(minimum: .zero, maximum: 10, default: .zero),
+                                                                    type: type)
+            view.primaryText = "INTER SECTION SPACING"
+        case .interGroupSpacing:
+            view = UISliderView<UISliderViewType>(configuration: .init(minimum: .zero, maximum: 10, default: .zero),
+                                                                    type: type)
+            view.primaryText = "INTER GROUP SPACING"
+        case .interItemSpacing:
+            view = UISliderView<UISliderViewType>(configuration: .init(minimum: .zero, maximum: 10, default: .zero),
+                                                                    type: type)
+            view.primaryText = "INTER ITEM SPACING"
+        }
+        
+        view.slider.minimumValueImage = .init(systemName: "circlebadge.fill")
+        
+        return view
     }
 }
