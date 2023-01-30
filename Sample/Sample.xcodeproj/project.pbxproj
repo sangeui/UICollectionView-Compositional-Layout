@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117400297ED036003BC7F7 /* AppDelegate.swift */; };
 		3D117403297ED036003BC7F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117402297ED036003BC7F7 /* SceneDelegate.swift */; };
-		3D117405297ED036003BC7F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117404297ED036003BC7F7 /* ViewController.swift */; };
 		3D11740A297ED036003BC7F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D117409297ED036003BC7F7 /* Assets.xcassets */; };
 		3D11740D297ED036003BC7F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D11740B297ED036003BC7F7 /* LaunchScreen.storyboard */; };
-		3D11741A297ED330003BC7F7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117419297ED330003BC7F7 /* View.swift */; };
 		3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11741B297ED817003BC7F7 /* CollectionView.swift */; };
-		3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */; };
 		3D117425297EDA5C003BC7F7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117424297EDA5C003BC7F7 /* Section.swift */; };
 		3D117427297EDBC4003BC7F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117426297EDBC4003BC7F7 /* Item.swift */; };
 		3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117428297EDC73003BC7F7 /* ModelProvider.swift */; };
@@ -23,24 +20,27 @@
 		3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117438297EEEE3003BC7F7 /* UILabelView.swift */; };
 		3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11743C297FBEBA003BC7F7 /* Category.swift */; };
 		3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */; };
-		3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117442297FC435003BC7F7 /* GridLayoutView.swift */; };
-		3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridLayout.swift */; };
+		3D117443297FC435003BC7F7 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117442297FC435003BC7F7 /* LayoutView.swift */; };
+		3D11744A297FC549003BC7F7 /* GridCollectionViewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117449297FC549003BC7F7 /* GridCollectionViewCompositionalLayout.swift */; };
 		3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */; };
 		3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */; };
 		3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11746B2982B4AC003BC7F7 /* UISliderView.swift */; };
+		3DB15A772983F25300F59CEB /* HorizontalScrollableLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A762983F25300F59CEB /* HorizontalScrollableLayoutViewController.swift */; };
+		3DB15A7A2983F2A200F59CEB /* XScrollableLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A792983F2A200F59CEB /* XScrollableLayoutView.swift */; };
+		3DB15A7C2986DEC300F59CEB /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A7B2986DEC300F59CEB /* UICollectionViewCompositionalLayout+Extension.swift */; };
+		3DB15A7F2988393300F59CEB /* HasValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A7E2988393300F59CEB /* HasValueProvider.swift */; };
+		3DB15A82298846E000F59CEB /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A81298846E000F59CEB /* GridLayoutView.swift */; };
+		3DB15A8529884E9100F59CEB /* UISliderViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB15A8429884E9100F59CEB /* UISliderViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D1173FD297ED036003BC7F7 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D117400297ED036003BC7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D117402297ED036003BC7F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D117404297ED036003BC7F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D117409297ED036003BC7F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D11740C297ED036003BC7F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D11740E297ED036003BC7F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D117419297ED330003BC7F7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		3D11741B297ED817003BC7F7 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		3D117424297EDA5C003BC7F7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3D117426297EDBC4003BC7F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3D117428297EDC73003BC7F7 /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
@@ -49,11 +49,17 @@
 		3D117438297EEEE3003BC7F7 /* UILabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelView.swift; sourceTree = "<group>"; };
 		3D11743C297FBEBA003BC7F7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D117440297FC364003BC7F7 /* GridLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewController.swift; sourceTree = "<group>"; };
-		3D117442297FC435003BC7F7 /* GridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
-		3D117449297FC549003BC7F7 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		3D117442297FC435003BC7F7 /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
+		3D117449297FC549003BC7F7 /* GridCollectionViewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCompositionalLayout.swift; sourceTree = "<group>"; };
 		3D11744C297FD1A9003BC7F7 /* GridLayoutDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutDataSource.swift; sourceTree = "<group>"; };
 		3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridLayoutCell.swift; sourceTree = "<group>"; };
 		3D11746B2982B4AC003BC7F7 /* UISliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISliderView.swift; sourceTree = "<group>"; };
+		3DB15A762983F25300F59CEB /* HorizontalScrollableLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollableLayoutViewController.swift; sourceTree = "<group>"; };
+		3DB15A792983F2A200F59CEB /* XScrollableLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScrollableLayoutView.swift; sourceTree = "<group>"; };
+		3DB15A7B2986DEC300F59CEB /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
+		3DB15A7E2988393300F59CEB /* HasValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasValueProvider.swift; sourceTree = "<group>"; };
+		3DB15A81298846E000F59CEB /* GridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
+		3DB15A8429884E9100F59CEB /* UISliderViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISliderViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +94,9 @@
 			children = (
 				3D117416297ED252003BC7F7 /* Resources */,
 				3D117414297ED227003BC7F7 /* App Delegates */,
-				3D11744E297FD248003BC7F7 /* CollectionView */,
+				3D117418297ED327003BC7F7 /* View */,
 				3D11742F297EEA4D003BC7F7 /* Pages */,
 				3D117423297EDA48003BC7F7 /* Model */,
-				3D117418297ED327003BC7F7 /* View */,
-				3D117415297ED236003BC7F7 /* Controllers */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -104,14 +108,6 @@
 				3D117402297ED036003BC7F7 /* SceneDelegate.swift */,
 			);
 			path = "App Delegates";
-			sourceTree = "<group>";
-		};
-		3D117415297ED236003BC7F7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3D117404297ED036003BC7F7 /* ViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3D117416297ED252003BC7F7 /* Resources */ = {
@@ -127,19 +123,11 @@
 		3D117418297ED327003BC7F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3D117420297ED88B003BC7F7 /* CollectionView Layout */,
-				3D117419297ED330003BC7F7 /* View.swift */,
-				3D11746B2982B4AC003BC7F7 /* UISliderView.swift */,
+				3D11744E297FD248003BC7F7 /* CollectionView */,
+				3DB15A80298846D800F59CEB /* LayoutView */,
+				3DB15A8329884E8400F59CEB /* UISliderView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3D117420297ED88B003BC7F7 /* CollectionView Layout */ = {
-			isa = PBXGroup;
-			children = (
-				3D117421297ED895003BC7F7 /* CollectionViewLayout.swift */,
-			);
-			path = "CollectionView Layout";
 			sourceTree = "<group>";
 		};
 		3D117423297EDA48003BC7F7 /* Model */ = {
@@ -208,6 +196,7 @@
 		3D11743F297FC353003BC7F7 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				3DB15A742983F21F00F59CEB /* X-Scrollable Layout */,
 				3D11743E297FC350003BC7F7 /* Grid Layout */,
 			);
 			path = Layouts;
@@ -224,7 +213,6 @@
 		3D117445297FC447003BC7F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3D117442297FC435003BC7F7 /* GridLayoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,7 +220,9 @@
 		3D117448297FC4EB003BC7F7 /* CollectionView Layout */ = {
 			isa = PBXGroup;
 			children = (
-				3D117449297FC549003BC7F7 /* GridLayout.swift */,
+				3D117449297FC549003BC7F7 /* GridCollectionViewCompositionalLayout.swift */,
+				3DB15A7B2986DEC300F59CEB /* UICollectionViewCompositionalLayout+Extension.swift */,
+				3DB15A7D2988392D00F59CEB /* Protocol */,
 			);
 			path = "CollectionView Layout";
 			sourceTree = "<group>";
@@ -262,6 +252,57 @@
 				3D117450297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3DB15A742983F21F00F59CEB /* X-Scrollable Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3DB15A782983F29A00F59CEB /* View */,
+				3DB15A752983F23900F59CEB /* Controller */,
+			);
+			path = "X-Scrollable Layout";
+			sourceTree = "<group>";
+		};
+		3DB15A752983F23900F59CEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DB15A762983F25300F59CEB /* HorizontalScrollableLayoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3DB15A782983F29A00F59CEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DB15A792983F2A200F59CEB /* XScrollableLayoutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DB15A7D2988392D00F59CEB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3DB15A7E2988393300F59CEB /* HasValueProvider.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		3DB15A80298846D800F59CEB /* LayoutView */ = {
+			isa = PBXGroup;
+			children = (
+				3D117442297FC435003BC7F7 /* LayoutView.swift */,
+				3DB15A81298846E000F59CEB /* GridLayoutView.swift */,
+			);
+			path = LayoutView;
+			sourceTree = "<group>";
+		};
+		3DB15A8329884E8400F59CEB /* UISliderView */ = {
+			isa = PBXGroup;
+			children = (
+				3D11746B2982B4AC003BC7F7 /* UISliderView.swift */,
+				3DB15A8429884E9100F59CEB /* UISliderViewType.swift */,
+			);
+			path = UISliderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,23 +377,26 @@
 			files = (
 				3D117441297FC364003BC7F7 /* GridLayoutViewController.swift in Sources */,
 				3D11744D297FD1A9003BC7F7 /* GridLayoutDataSource.swift in Sources */,
-				3D117422297ED895003BC7F7 /* CollectionViewLayout.swift in Sources */,
-				3D11741A297ED330003BC7F7 /* View.swift in Sources */,
+				3DB15A7A2983F2A200F59CEB /* XScrollableLayoutView.swift in Sources */,
 				3D117451297FD26B003BC7F7 /* CollectionViewGridLayoutCell.swift in Sources */,
+				3DB15A7F2988393300F59CEB /* HasValueProvider.swift in Sources */,
+				3DB15A8529884E9100F59CEB /* UISliderViewType.swift in Sources */,
 				3D11741C297ED817003BC7F7 /* CollectionView.swift in Sources */,
-				3D11744A297FC549003BC7F7 /* GridLayout.swift in Sources */,
+				3D11744A297FC549003BC7F7 /* GridCollectionViewCompositionalLayout.swift in Sources */,
+				3DB15A772983F25300F59CEB /* HorizontalScrollableLayoutViewController.swift in Sources */,
 				3D117425297EDA5C003BC7F7 /* Section.swift in Sources */,
 				3D117427297EDBC4003BC7F7 /* Item.swift in Sources */,
 				3D117436297EEA77003BC7F7 /* HomeView.swift in Sources */,
 				3D11746C2982B4AC003BC7F7 /* UISliderView.swift in Sources */,
 				3D117434297EEA64003BC7F7 /* HomeViewController.swift in Sources */,
 				3D117429297EDC73003BC7F7 /* ModelProvider.swift in Sources */,
-				3D117405297ED036003BC7F7 /* ViewController.swift in Sources */,
 				3D11743D297FBEBA003BC7F7 /* Category.swift in Sources */,
-				3D117443297FC435003BC7F7 /* GridLayoutView.swift in Sources */,
+				3D117443297FC435003BC7F7 /* LayoutView.swift in Sources */,
+				3DB15A7C2986DEC300F59CEB /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
 				3D117401297ED036003BC7F7 /* AppDelegate.swift in Sources */,
 				3D117439297EEEE3003BC7F7 /* UILabelView.swift in Sources */,
 				3D117403297ED036003BC7F7 /* SceneDelegate.swift in Sources */,
+				3DB15A82298846E000F59CEB /* GridLayoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

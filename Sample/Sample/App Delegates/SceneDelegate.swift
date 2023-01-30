@@ -13,6 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var navigationController: UINavigationController = {
         let viewController = UINavigationController(rootViewController: self.createHomeViewController())
         viewController.navigationBar.prefersLargeTitles = true
+        viewController.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+        ]
         
         return viewController
     } ()
@@ -32,6 +35,11 @@ extension SceneDelegate: HomeViewControllerDelegate {
             self.navigationController.pushViewController(createGridLayoutViewController(), animated: true)
             return
         }
+        
+        if category == .horizontal_scrollable_layout {
+            self.navigationController.pushViewController(createXScrollableLayoutViewController(), animated: true)
+            return
+        }
     }
 }
 
@@ -45,6 +53,12 @@ private extension SceneDelegate {
     
     func createGridLayoutViewController() -> GridLayoutViewController {
         let viewController = GridLayoutViewController()
+        
+        return viewController
+    }
+    
+    func createXScrollableLayoutViewController() -> XScrollableLayoutViewController {
+        let viewController = XScrollableLayoutViewController()
         
         return viewController
     }

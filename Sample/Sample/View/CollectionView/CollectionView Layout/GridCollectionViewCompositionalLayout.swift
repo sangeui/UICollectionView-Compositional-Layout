@@ -7,25 +7,21 @@
 
 import UIKit
 
-struct GridLayoutConfigurationValue {
-    let numberOfColumns: CGFloat
-    let interGroupSpacing: CGFloat
-    let interItemSpacing: CGFloat
-}
 
-class GridLayout: UICollectionViewCompositionalLayout {
-    init(columnsProvider: @escaping (() -> GridLayoutConfigurationValue)) {
-        super.init(sectionProvider: { _,_ in
-            return .section(value: columnsProvider())
+
+class GridCollectionViewCompositionalLayout: UICollectionViewCompositionalLayout, HasValueProvider {
+    var valueProvider: ValueProvider
+    
+    init(layoutValueProvider: ValueProvider = .init()) {
+        self.valueProvider = layoutValueProvider
+        
+        super.init(sectionProvider: { sectionIndex, environment in
+            return .section(value: layoutValueProvider.value)
         })
     }
     
     required init?(coder: NSCoder) {
         fatalError()
-    }
-    
-    func update() {
-        self.invalidateLayout()
     }
     
     func update(interSectionSpacing: CGFloat) {
@@ -38,7 +34,7 @@ class GridLayout: UICollectionViewCompositionalLayout {
 
 // MARK: - Section
 private extension NSCollectionLayoutSection {
-    static func section(value: GridLayoutConfigurationValue) -> NSCollectionLayoutSection {
+    static func section(value: UICollectionViewCompositionalLayout.Value) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: .group(value: value))
         section.interGroupSpacing = value.interGroupSpacing
         
@@ -48,7 +44,7 @@ private extension NSCollectionLayoutSection {
 
 // MARK: - Group
 private extension NSCollectionLayoutGroup {
-    static func group(value: GridLayoutConfigurationValue) -> NSCollectionLayoutGroup {
+    static func group(value: UICollectionViewCompositionalLayout.Value) -> NSCollectionLayoutGroup {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                           heightDimension: .fractionalWidth(1.0 / value.numberOfColumns))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: size,
@@ -62,7 +58,7 @@ private extension NSCollectionLayoutGroup {
 
 // MARK: - Item
 private extension NSCollectionLayoutItem {
-    static func item(value: GridLayoutConfigurationValue) -> NSCollectionLayoutItem {
+    static func item(value: UICollectionViewCompositionalLayout.Value) -> NSCollectionLayoutItem {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / value.numberOfColumns),
                                           heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: size)

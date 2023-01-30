@@ -14,7 +14,7 @@ class HomeView: UIView {
     private let labelView: UILabelView = .init()
     private let tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
     
-    private let categories: [Category] = [.grid_layout]
+    private let categories: [Category] = [.grid_layout, .horizontal_scrollable_layout]
     
     init() {
         super.init(frame: .zero)
